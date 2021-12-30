@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="../logo.jpeg" />
+	<title> PREDICTED EMOTION </title>
+	<style type="text/css">
+
+		body{
+			background-color :yellow;
+						padding-right: 100px;
+			padding-left: 100px;
+
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+
+			font-size : 30px;
+		}
+
+		h1{
+			background-color: black;
+			color :white;
+			text-align: center;
+			border-radius: 20px;
+			padding-bottom: 20px;
+		}
+
+		#answer{
+			width: 800px;
+			height: 75px;
+			text-align: center;
+			text-decoration-style: dashed;
+			font-size: 30px;
+		}
+
+		#image{
+			padding-left: 590px;
+			font-size: 145px;
+		}
+
+		h4{
+			text-align: center;
+		}
+
+		#recommendation{
+			padding-left: 480px;
+		}
+		.bottom{
+			background-color: white;
+			padding-left: 5%;
+			padding-top: 5%;
+			padding-bottom: 5%;
+			padding-right: 5%;
+			border: solid;
+		}
+		.first{
+		 background-color: rgb(5, 5, 99);
+		 text-align: center;
+		 border-radius: 27px;
+		 padding-top: 3%;
+		 padding-bottom: 3%;
+		}
+		.second{
+			background-color: rgb(5, 5, 99);
+			text-align: center;
+			border-radius: 27px;
+			padding-top: 3%;
+		 padding-bottom: 3%;
+		}
+		.third{
+		 background-color: rgb(5, 5, 99);
+		 text-align: center;
+		 border-radius: 27px;
+		 padding-top: 3%;
+		 padding-bottom: 3%;
+		}
+
+		#getrecom{
+			
+			color: white;
+			text-decoration: none;
+		}
+
+		#morein{
+
+			color: white;
+			text-decoration: none;
+
+		}
+		#details{
+			color: white;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+
+     <h1 id="find">
+     	-------- PREDICTED EMOTION --------  <br>
+     	<input type="text" id="answer" value="{{output}}" readonly="text">
+     </h1>
+
+     <div id="image">
+     </div>
+<br>
+	
+	 
+
+<nav class ="bottom">
+	<div class="third">
+		<a href="http://127.0.0.1:5000/details" id="details">Details about Prediction</a>
+	</div>
+	<br><br>
+
+	<div class="second">
+		<a href="http://127.0.0.1:5000/getrecom" id="getrecom"> Get Recommendation</a>
+	</div>
+
+	<br><br>
+
+
+	<div class="first">
+		<a href="http://127.0.0.1:5000/moreinfo" id="morein" > More Info</a>
+	</div>
+
+	<br> 
+
+	<p id="ans">
+
+
+	</p>
+	
+
+</nav>
+
+ 
+
+<script>
+	
+
+
+		var predict = document.getElementById("answer").value;
+
+		if( predict.includes("joy")==true){
+			document.getElementById("image").innerHTML = "&#128515;";
+			window.localStorage.setItem("answer","joy");
+			
+		}else if(predict.includes("sadness")==true){
+			document.getElementById("image").innerHTML = "&#128531;";
+			window.localStorage.setItem("answer","sadness");
+
+		}else if(predict.includes("anger")==true){
+			document.getElementById("image").innerHTML = "&#128544;";
+			window.localStorage.setItem("answer","anger");
+			
+		}else if(predict.includes("fear")==true){
+			document.getElementById("image").innerHTML = "&#128552;";
+			window.localStorage.setItem("answer","fear");
+			
+		}else if(predict.includes("love")==true){
+			document.getElementById("image").innerHTML = "&#128536;";
+			window.localStorage.setItem("answer","love");
+			
+		}else if(predict.includes("surprise")==true){
+			document.getElementById("image").innerHTML = "&#128558;";
+			window.localStorage.setItem("answer","surprise");
+			
+		}
+
+</script>
+
+
+
+     
+
+</body>
+</html>
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="logo.jpeg" />
+	<title> TEXT EMOTION DETECTION PAGE </title>
+
+	<style type="text/css">
+
+		.first{
+			color : white;
+			text-align: center;
+			text-shadow: 5px 5px 10px black;
+		}
+
+		body{
+			background-image: url(question.jpg);
+			padding-right: 100px;
+			padding-left: 100px;
+
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+
+			font-size : 30px;
+		}
+
+		.form{
+
+			color : white;
+			padding-left: 30px;
+			text-align: center;
+		}
+
+		#inside_button{
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-radius: 20px;
+			background-color: lightyellow;
+			border-style: solid;
+			text-decoration: none;
+		}
+
+		#inside_button:hover{
+			background-color: yellow;
+		}
+
+		#textbox{
+			font-size: 15px;
+			height: 30px;
+		}
+
+		#blink{
+			padding-left: 540px;
+			font-size: 145px;
+		}
+
+		h4{
+			text-align: center;
+			font-size: 25px;
+			color: white;
+			animation-name: example;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			
+		}
+
+		@keyframes example {
+			from {color: red}
+			to {color: lawngreen}
+			
+		}
+
+		
+		
+
+
+
+
+	</style>
+</head>
+
+<body>
+	<div class = "first">
+		<h1> :) TEXT EMOTION DETECTOR (: </h1>
+	</div>
+
+	<br>
+
+	<div class = "form">
+		<form action="http://127.0.0.1:5000/TEXT_EMOTION_DETECTOR" method="POST" id="my-button">
+			<h3> Enter the text below to detect the emotion : </h3>
+			<input type="text" name="text" id = "textbox" size="90" >
+			<br>
+			<input type="button" name="SUBMIT" value="PREDICT" id = "inside_button" onclick="trigger()">
+		</form>
+	</div>
+
+	<br>
+	
+	
+
+	<h4 id= "msg"></h4>
+   
+
+	<div id = "blink"></div>
+
+	<script type="text/javascript">	
+
+	function trigger(){
+
+		var select = ["&#128515;","&#128531;","&#128544;","&#128552;","&#128536;","&#128558;"];
+
+		document.getElementById("my-button").submit();
+
+		document.getElementById("msg").innerHTML = "LET'S PREDICT ...";
+
+		var i =1;
+
+			while( i  <=  1000){
+			
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[0]; }, 1000);
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[1]; }, 2000);
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[2]; }, 3000);
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[3]; }, 4000);
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[4]; }, 5000);
+			setInterval(function(){ document.getElementById("blink").innerHTML = select[5]; }, 6000);
+
+			i=i+1;
+			}
+
+	}
+
+
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
